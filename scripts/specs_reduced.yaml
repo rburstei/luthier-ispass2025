@@ -1,0 +1,110 @@
+HeCBench:
+  burger:
+    programming_models:
+      sycl:
+        run_command: ("./main", "8193", "8193", "10")
+        compilation_flags: ("-e", "GCC_TOOLCHAIN=/usr/", "-e", "CC=/opt/sycl/bin/clang++", "-e",
+          "HIP=yes", "-e", "HIP_ARCH=gfx90a")
+  maxpool3d:
+    programming_models:
+      sycl:
+        run_command: ("./main", "2048", "2048", "96", "10")
+        compilation_flags: ("-e", "GCC_TOOLCHAIN=/usr/", "-e", "CC=/opt/sycl/bin/clang++", "-e",
+          "HIP=yes", "-e", "HIP_ARCH=gfx90a")
+  convolutionSeparable:
+    programming_models:
+      sycl:
+        run_command: ("./main", "8192", "8192", "10")
+        compilation_flags: ("-e", "GCC_TOOLCHAIN=/usr/", "-e", "CC=/opt/sycl/bin/clang++", "-e",
+          "HIP=yes", "-e", "HIP_ARCH=gfx90a")
+  dense-embedding:
+    programming_models:
+      sycl:
+        run_command: ("./main", "12500", "1", "125")
+        compilation_flags: ("-e", "GCC_TOOLCHAIN=/usr/", "-e", "CC=/opt/sycl/bin/clang++", "-e",
+          "HIP=yes", "-e", "HIP_ARCH=gfx90a")
+  winograd:
+    programming_models:
+      sycl:
+        run_command: ("./main",)
+        compilation_flags: ("-e", "GCC_TOOLCHAIN=/usr/", "-e", "CC=/opt/sycl/bin/clang++", "-e",
+          "HIP=yes", "-e", "HIP_ARCH=gfx90a")
+  atomicReduction:
+    programming_models:
+      sycl:
+        run_command: ("./main",)
+        compilation_flags: ("-e", "GCC_TOOLCHAIN=/usr/", "-e", "CC=/opt/sycl/bin/clang++", "-e",
+          "HIP=yes", "-e", "HIP_ARCH=gfx90a")
+  matrix-rotate:
+    programming_models:
+      sycl:
+        run_command: ("./main", "100", "10")
+        compilation_flags: ("-e", "GCC_TOOLCHAIN=/usr/", "-e", "CC=/opt/sycl/bin/clang++", "-e",
+          "HIP=yes", "-e", "HIP_ARCH=gfx90a")
+  eigenvalue:
+    programming_models:
+      sycl:
+        run_command: ("./main", "512", "10")
+        compilation_flags: ("-e", "GCC_TOOLCHAIN=/usr/", "-e", "CC=/opt/sycl/bin/clang++", "-e",
+          "HIP=yes", "-e", "HIP_ARCH=gfx90a")
+  b+tree:
+    programming_models:
+      sycl:
+        run_command: ("./b+tree.out", "file", "../data/b+tree/mil.txt", "command", "../data/b+tree/command.txt")
+        compilation_flags: ("-e", "GCC_TOOLCHAIN=/usr/", "-e", "CC=/opt/sycl/bin/clang++", "-e",
+          "HIP=yes", "-e", "HIP_ARCH=gfx90a")
+  floydwarshall:
+    programming_models:
+      sycl:
+        run_command: ("./main", "16", "5", "8")
+        compilation_flags: ("-e", "GCC_TOOLCHAIN=/usr/", "-e", "CC=/opt/sycl/bin/clang++", "-e",
+          "HIP=yes", "-e", "HIP_ARCH=gfx90a")
+  fpc:
+    programming_models:
+      sycl:
+        run_command: ("./main", "256", "10")
+        compilation_flags: ("-e", "GCC_TOOLCHAIN=/usr/", "-e", "CC=/opt/sycl/bin/clang++", "-e",
+          "HIP=yes", "-e", "HIP_ARCH=gfx90a")
+  hwt1d:
+    programming_models:
+      sycl:
+        run_command: ("./main", "8388608", "10")
+        compilation_flags: ("-e", "GCC_TOOLCHAIN=/usr/", "-e", "CC=/opt/sycl/bin/clang++", "-e",
+          "HIP=yes", "-e", "HIP_ARCH=gfx90a")
+  nn:
+    programming_models:
+      sycl:
+        run_command: ("./main", "filelist.txt", "-r", "5", "-lat", "30", "-lng", "90", "-i", "10", "-t")
+        compilation_flags: ("-e", "GCC_TOOLCHAIN=/usr/", "-e", "CC=/opt/sycl/bin/clang++", "-e",
+          "HIP=yes", "-e", "HIP_ARCH=gfx90a")
+  hmm:
+    programming_models:
+      sycl:
+        run_command: ("./main",)
+        compilation_flags: ("-e", "GCC_TOOLCHAIN=/usr/", "-e", "CC=/opt/sycl/bin/clang++", "-e",
+          "HIP=yes", "-e", "HIP_ARCH=gfx90a")
+  inversek2j:
+    programming_models:
+      sycl:
+        run_command: ("./main", "../inversek2j-sycl/coord_in.txt", "10")
+        compilation_flags: ("-e", "GCC_TOOLCHAIN=/usr/", "-e", "CC=/opt/sycl/bin/clang++", "-e",
+          "HIP=yes", "-e", "HIP_ARCH=gfx90a")
+InstrCount:
+  programming_models:
+    - sycl
+  benchmarks:
+    - atomicReduction
+    - b+tree
+    - burger
+    - convolutionSeparable
+    - dense-embedding
+    - eigenvalue
+    - floydwarshall
+    - fpc
+    - hmm
+    - hwt1d
+    - inversek2j
+    - matrix-rotate
+    - maxpool3d
+    - nn
+    - winograd
