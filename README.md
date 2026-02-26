@@ -54,6 +54,10 @@ The Git revision number of all software is included inside the `Dockerfile`.
    --security-opt seccomp=unconfined --shm-size=16G --cap-add=SYS_PTRACE --ipc=host --privileged --gpus all \
    containers.rc.northeastern.edu/luthier/ispass-2025-artifact /bin/bas
    ```
+
+START HERE
+
+
 4. Build the HeC benchmarks:
    ```bash
    python3 scripts/compile_benchmarks.py --action build
