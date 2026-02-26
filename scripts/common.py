@@ -1,15 +1,15 @@
 from yacs.config import CfgNode
+from pathlib import Path
 import pathlib
 import io
 import selectors
 import subprocess
 import sys
 
-
-def read_yaml_cfg() -> CfgNode:
+def read_yaml_cfg(yaml_path: str | Path) -> CfgNode:
     cfg = CfgNode()
     cfg.set_new_allowed(True)
-    cfg.merge_from_file(str(pathlib.Path(__file__).parent.resolve().joinpath("specs.yaml")))
+    cfg.merge_from_file(str(Path(yaml_path)))
     cfg.freeze()
     return cfg
 
