@@ -62,6 +62,11 @@ START HERE
    ```bash
    python3 scripts/compile_benchmarks.py --action build
    ```
+
+5. Build GTPin - gtpin_kit which will be place here alongside nvbit/luthier releases
+
+   Build instructions
+
 5. To run the experiments, run the following scripts:
    ```bash
    # For figure 4(a) and 4(c)
