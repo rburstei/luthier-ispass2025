@@ -69,23 +69,16 @@ START HERE
 
 5. To run the experiments, run the following scripts:
    ```bash
-   # For figure 4(a) and 4(c)
-   python3 scripts/instr_count.py --dump_stdout_stderr
-   # For figure 5
-   python3 scripts/opcode_histogram.py --dump_stdout_stderr
-   # For figure 4(b)
-   python3 scripts/lds lds_bank_conflict.py --dump_stdout_stderr
+   python3 scripts/amd_instr_count.py --dump_stdout_stderr
+   ```
+   Run the following for reduced workloads:
+   ```bash
+   python3 scripts/amd_instr_count.py --dump_stdout_stderr --specs_yaml scripts/specs.yaml
    ```
    Note that the `--dump_stdout_stderr` dumps the output of each experiments to the standard output/error, which 
    can be quite large; Therefore, it is recommended to clip the terminal emulator output when running the experiments.
 6. To print the results, run the following scripts:
    ```bash
    # Figure 4(a)
-   python3 scripts/print_instr_count.py
-   # For figure 5
-   python3 print_opcode_histogram.py
-   # For figure 4(b)
-   python3 print_lds_bank_conflict.py
-   # For figure 4(c)
-   python3 print_overhead.py
+   python3 scripts/amd_print_instr_count.py
    ```
