@@ -18,7 +18,7 @@ def parse_and_validate_args() -> argparse.Namespace:
 
 def main():
     args = parse_and_validate_args()
-    benchmark_cfg = read_yaml_cfg()["HeCBench"]
+    benchmark_cfg = read_yaml_cfg("scripts/specs.yaml")["HeCBench"]
     for bench, programming_models in benchmark_cfg.items():
         for programming_model, cfgs in programming_models["programming_models"].items():
             compile_flags = eval(cfgs["compilation_flags"])
